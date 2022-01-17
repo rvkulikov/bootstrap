@@ -7,10 +7,9 @@ exec:
 down:
 	docker-compose down
 
-watch:
-	docker-compose exec bootstrap.node npm run watch-css-docs
-
-serve:
+.PHONY: run
+run:
+	docker-compose exec bootstrap.node npm run css-compile
 	docker-compose exec bootstrap.node hugo server --port 9001 --disableFastRender
 
 .PHONY: build
